@@ -23,6 +23,13 @@ class CssSnifferTemplate extends Template
 
     public function __toString()
     {
+        $this->render();
+
+        return parent::__toString();
+    }
+
+    public function render()
+    {
         if(isset($this->m_oSniffer))
         {
             $oSniffer = $this->m_oSniffer;
@@ -116,10 +123,7 @@ class CssSnifferTemplate extends Template
                 }#foreach
             }#foreach
             //------------------------------------------------------------------
-
-            /** @var $DOMNodeList DOMNodeList  */
         }
-        return parent::__toString();
     }
 }
 

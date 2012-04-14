@@ -12,6 +12,7 @@ $oSniffer->parse();
 
 $oTemplate->setSniffer($oSniffer);
 
-echo $oTemplate;
+$oTemplate->render();
+echo $oTemplate->toString();
 
 #EOF
