@@ -71,7 +71,7 @@ class Template extends DOMDocument
         return self::getFirstElementFromList($oDOMNodeList);
     }
 
-    protected static function getFirstElementFromList($p_oDOMNodeList)
+    protected static function getFirstElementFromList(DOMNodeList $p_oDOMNodeList)
     {
         $oNode = null;
 
@@ -95,7 +95,7 @@ class Template extends DOMDocument
     }
 
     /**
-     * @param $p_sClassName
+     * @param $p_sPath
      *
      * @return DOMNodeList
      */
