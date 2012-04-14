@@ -1,0 +1,103 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+li {
+    list-style-position: inside;
+    margin-left: 1em;
+}
+
+/*----------------------------------------------------------------------------*/
+section {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    padding: 0 1em;
+    width: 47.5%;
+    overflow: auto;
+    height: 100%;
+}
+
+section h4 {
+    background-color: #000;
+    color: #FFF;
+    margin: 1em 0 0;
+    padding: 0 1em;
+    border-top-left-radius: 1em;
+}
+
+section ul {
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    /* @TODO: CLEARFIX */
+}
+
+section li span {
+    float: right;
+    position: relative;
+    margin-right: 0.5em;
+}
+/*----------------------------------------------------------------------------*/
+menu {
+    position: fixed;
+    top: 0;
+
+    width: 25%;
+    min-width: 20em;
+
+    height: 100%;
+    overflow: auto;
+    background: #FFF;
+    /*padding-top: 4em;*/
+}
+
+menu h2 {
+    text-align: center;
+    background-color: rgba(255,255,255, 0.75);
+    padding: 0.5em;
+    position: fixed;
+    width: 11.74em;
+    top: 0;
+}
+
+.files ul,
+menu h3 {
+    margin-top: 3em;
+}
+
+
+section h3 span,
+section h4 span,
+menu h2 span {
+    font-size: 65%;
+    opacity: 0.75;
+}
+
+section h3 span:before,
+section h4 span:before,
+menu h2 span:before {
+    content: ' - ';
+}
+
+    /*------------------------------------------------------------------------*/
+    .files {
+        right: 0;
+    }
+
+    .files li {
+        list-style-position: inside;
+        list-style-type: none;
+        line-height: 1em;
+    }
+
+    .files li:before {
+        content: '- ';
+    }
+/*----------------------------------------------------------------------------*/
+#EOF
