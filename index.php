@@ -7,7 +7,7 @@ require 'class.CssSnifferTemplate.php';
 $oTemplate = CssSnifferTemplate::fromFile('main.html');
 
 $oSniffer = new CssSniffer();
-$oSniffer->setCssDirectory('/home/ben/Desktop/dev/DCPF/new/www/rsrc/css');
+$oSniffer->setCssDirectory(__DIR__);
 $oSniffer->parse();
 
 $oTemplate->setSniffer($oSniffer);
