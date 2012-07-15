@@ -77,7 +77,6 @@ class Template extends DOMDocument
 
         if ($p_oDOMNodeList->length > 0) {
             $oNode = $p_oDOMNodeList->item(0);
-            return $oNode;
         }
 
         return $oNode;
@@ -106,6 +105,7 @@ class Template extends DOMDocument
 
     /**
      * @param DOMElement $p_oDomNode
+     * @return DOMNodeList
      */
     function removeChildrenFromNode(DOMElement $p_oDomNode)
     {
