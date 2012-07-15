@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Css Sniffer</title>
+
 	<link href="main.css" rel="stylesheet">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -18,5 +22,22 @@
 	<menu class="files">
 		<h2>Files</h2>
 	</menu>
+
+	<script>
+		var $itemList = $('section div');
+
+		$('.selector').find('h2').click(function(){
+			$itemList.show();
+		}).css('cursor', 'pointer')
+		.attr('title', 'Show all selectors');
+		;
+
+		$('a').click(function(){
+			var href = $(this).attr('href');
+			console.log($(href));
+			$itemList.hide();
+			$(href).show();
+		})
+	</script>
 </body>
 </html>
