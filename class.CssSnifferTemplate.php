@@ -95,13 +95,21 @@ class CssSnifferTemplate extends Template
                     // Get info from base selector
                     $aSelectorInfo = $aSelectorList[$t_sBaseSelector];
 
-                    // Add row to menu
-                    $oListNode->appendChild($this->createElement('li', $t_sBaseSelector));
+					$checksum = crc32($t_sBaseSelector);
 
-                    // Append Header to main section
-                    $oTitle = $oMainSection->appendChild($this->createElement('h4', $t_sBaseSelector));
+					// Add link to menu
+					$listItem = $oListNode->appendChild($this->createElement('li'));
+					/** @var $linkNode DOMElement */
+					$linkNode = $listItem->appendChild($this->createElement('a', $t_sBaseSelector));
+					$linkNode->setAttribute('href', '#' . $checksum);
 
-                    $oSelectorList = $oMainSection->appendChild($this->createElement('ul'));
+                    // Append to main section
+					/** @var $oDiv DOMElement */
+					$oDiv = $oMainSection->appendChild($this->createElement('div'));
+					$oDiv->setAttribute('id', $checksum);
+
+					$oTitle = $oDiv->appendChild($this->createElement('h4', $t_sBaseSelector));
+					$oSelectorList = $oDiv->appendChild($this->createElement('ul'));
 
                     foreach($aSelectorInfo as $t_sFileName => $t_aFullSelectors)
                     {
